@@ -1,0 +1,23 @@
+/* OptIn.module.css */
+.container {
+    position: relative;
+}
+
+.form {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.input {
+    margin: 10px 0;
+}
+
+.button {
+    background: #3498db;
+    color: white;
+    border: none;
+}
