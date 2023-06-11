@@ -1,16 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import OptIn from "./components/OptIn";
-import ThankYou from "./components/ThankYou";
+import React from 'react';
+import AppRoutes from './Routes';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/thankyou" element={<ThankYou />} />
-        <Route path="/" element={<OptIn />} />
-      </Routes>
-    </Router>
+    <div>
+      <AppRoutes />
+    </div>
   );
 };
 

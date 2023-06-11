@@ -1,21 +1,24 @@
+require('dotenv').config();
+
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
 const app = express();
-const port = 5000;
-
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const postRoute = require('./routes/posts');
+const DB_URI    = "mongodb+srv://joywithmonica:Lolaluke8@users.nhuvcwz.mongodb.net/?retryWrites=true&w=majority";
+const cors = require('cors');
 app.use(cors());
+
+
 app.use(bodyParser.json());
 
-app.post('/subscribe', (req, res) => {
-    const { email } = req.body;
+mongoose.connect(process.env.DB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+    .then(() => console.log('Connected to DB!')) 
+    .catch(err => console.log(err));
 
-    // later we'll implement email handling logic here
+app.use('/posts', postRoute);
 
-    res.json({ message: 'Subscription successful!' });
-});
+app.listen(3000, () => console.log('Server running'));
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+
+// mongodb+srv://joywithmonica:Lolaluke8@users.nhuvcwz.mongodb.net/?retryWrites=true&w=majority
