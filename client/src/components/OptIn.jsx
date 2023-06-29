@@ -1,5 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import './OptIn.css';
+
+
+const testimonials = [
+    {
+      name: 'Ely Garcia',
+      photo: '/Ely Garcia.jpg',
+      testimonial: 'Music Medicine, Therapy using Art and Music, Singer, Songwriter, Music Producer'
+    },
+    {
+      name: 'Faryl Moore',
+      photo: '/Faryl Moore.jpg',
+      testimonial: 'Master of Energetic Arts, Pranic Healing and Soul Coach, specializes in removing blocks, traumas, and negative energy and negative thought forms'
+    },
+    {
+      name: 'Faye Lawande',
+      photo: '/Faye Lawande.jpg',
+      testimonial: 'Lawand-Internal Conflict Resolution Expert, Trauma-Informed Clinical Hypnotherapist, Stress Response Regulation Expert, and Nervous System Specialist'
+    },
+    {
+      name: 'Julio Romero',
+      photo: '/Juli Romero.png',
+      testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health &amp; Spiritual Wellness Coach'
+    },
+    {
+      name: 'Justine Lette',
+      photo: '/Justine Lette.jpg',
+      testimonial: 'Internationally recognized Hypnotherapy Trainer, Owner of Hypnosis New Zealand, and Creator of the Golden Thread Trauma Transformation Protocol'
+    },
+    {
+      name: 'Karina Chapman',
+      photo: '/Karina Chapman Headshot.jpg',
+      testimonial: 'Conscious Connection Expert, Author, and Speaker'
+    },
+    {
+      name: 'Markeeta Stokes',
+      photo: '/Markeeta-Stokes.jpeg',
+      testimonial: 'Author, Personal Development Coach, Owner of day spa, “The Esthetic Suite”'
+    },
+    {
+      name: 'Meredith Orlowski',
+      photo: '/Meredith-Orlowski.jpeg',
+      testimonial: 'I found what I was looking for!'
+    },
+    {
+      name: 'Tania Davis',
+      photo: '/Tania Davis.jpg',
+      testimonial: 'The Success Slow Coach™️,CCHt, DHypCoun, MPNLP, MNLPC, MMktg, BMgmt, Director of Mindful Impact™ Wellness Hub, Board Director of Australian Hypnotherapists Association'
+    },
+    {
+      name: 'Zoe Anna Bell',
+      photo: '/Zoe-Anna Bell.jpg',
+      testimonial: '6x Selling Author, Breath Coach that leads a Path from Awareness to Embodied Emergence'
+    },
+  ];
+
+const Footer = () => {
+    return (
+        <footer style={{ background: '#c5c2a3', padding: '20px', marginTop: '20px', width: '100%', textAlign: 'center', color: '#272122' }}>
+            <p style={{ margin: 0 }}>We can't wait to have you us at the Happiness Summit 2023, where you'll discover the keys to lasting happiness and build a vibrant community of support. See you there!</p>
+        </footer>
+    );
+};
 
 const OptIn = ({ setSubmitted, submitted }) => {
     const [firstName, setFirstName] = useState("");
@@ -7,6 +72,48 @@ const OptIn = ({ setSubmitted, submitted }) => {
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
+
+
+    const styles = {
+        carousel: {
+          width: '50%',
+          margin: '20px 0',
+        },
+        arrow: {
+          position: 'absolute',
+          zIndex: 2,
+          top: 'calc(50% - 15px)',
+          width: 30,
+          height: 30,
+          cursor: 'pointer',
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          color: '#ffffff',
+          fontSize: '2rem',
+          borderRadius: '50%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+        testimonialImage: {
+            height: '250px',
+            width: 'auto',
+        },
+        testimonialItem: {
+            textAlign: 'center',
+        },
+        testimonialName: {
+            fontWeight: 'bold',
+            margin: '10px 0',
+        },
+        footer: {
+          background: '#272122',
+          color: '#fff',
+          padding: '20px',
+          textAlign: 'center',
+          marginTop: 'auto',
+        }
+      };
+    
     useEffect(() => {
         localStorage.removeItem('formFilled');
     }, []);
@@ -47,63 +154,77 @@ const OptIn = ({ setSubmitted, submitted }) => {
         }
     };
     
-
-    // Rest of your return statement here...
     return (
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(to bottom right, lightpink, white)', height: '100vh', overflowY: 'auto'}}>
-            <img src="/BANNER.jpg" alt="Banner" style={{width: '100%', height: '30vh', objectFit: 'cover'}}/>
-            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
-                <p style={{color: 'green', fontSize: '16px'}}>Are you ready to embark on a journey of self-discovery and unlock the secrets to lasting happiness? Register now for our FREE exclusive virtual summit and join a community of like-minded individuals hoping to find a fulfilling and joyful life.
-                Get to know an amazing lineup of renowned experts in the fields of positive psychology, mindfulness, well-being, and personal development. They will share their wisdom, insights, and practical tips to help you find relief, cultivate happiness and lead a more meaningful life.</p>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#b3c5a9', overflowY: 'auto'}}>
+            <div style={{width: '100%', overflow: 'hidden'}}>
+                <img src="/banner monica.png" alt="Banner" style={{width: '100%', height: 'auto'}}/>
             </div>
-            <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', marginBottom: '20px'}}>
-                <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '50%', background: 'transparent', padding: '20px', height: '50vh'}}>
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={firstName}
-                        onChange={e => setFirstName(e.target.value)}
-                        placeholder="First name"
-                        required
-                        style={{margin: '10px 0', padding: '10px', width: '80%'}}
-                    />
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={lastName}
-                        onChange={e => setLastName(e.target.value)}
-                        placeholder="Last name"
-                        required
-                        style={{margin: '10px 0', padding: '10px', width: '80%'}}
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        placeholder="Your email"
-                        required
-                        style={{margin: '10px 0', padding: '10px', width: '80%'}}
-                    />
-                    <button type="submit" style={{margin: '10px 0', padding: '10px 20px', background: '#D3D3D3', color: 'green', border: '2px solid green', cursor: 'pointer'}}>Claim Your Seat</button>
-                </form>
-                <div style={{width: '50%', height: '50vh', marginBottom: '20px', background: 'transparent'}}>
-                <h3>Don't miss this FREE opportunity to invest in your happiness and well-being. Register now to secure your spot at our free Finding Joy Happiness Summit 2023. Fill out the info below and join us on a path to a happier and more fulfilled life.</h3>
-                    {/* <textarea
-                        value={text}
-                        onChange={e => setText(e.target.value)}
-                        style={{width: '100%', height: '20vh', marginBottom: '10px'}}
-                        placeholder="Your text here..."
-                        
-                    /> */}
-                    <video style={{width: '100%', height: '30vh', objectFit: 'contain', background: 'transparent'}} controls>
+            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
+                <p style={{color: '#272122', fontFamily: 'Nourd Bold',fontWeight: 'bold', fontSize: '22px', letterSpacing: '1px', lineHeight: '1.5'}}> Get to know an amazing lineup of renowned experts in the fields of positive psychology, mindfulness, well-being, and personal development. They will share their wisdom, insights, and practical tips to help you find relief, cultivate happiness and lead a more meaningful life.</p>
+            </div>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginBottom: '20px'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'start', width: '70%', backgroundImage: "url(/form_background.png)", backgroundSize: 'cover', padding: '20px'}}>
+                    <video style={{width: 'auto', height: '80vh', objectFit: 'contain'}} controls>
                         <source src="IMG_6071.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                </div>
+                    <div style={{background: 'transparent', padding: '20px 20px 20px 0', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexGrow: 1}}>
+    <p style={{color: '#272122',fontFamily: 'Nourd Bold',fontWeight: 'bold', fontSize: '20px', textAlign: 'center', marginBottom: '20px', letterSpacing: '1px', lineHeight: '1.5'}}> Are you ready to embark on a journey of self-discovery and unlock the secrets to lasting happiness? Register now for our FREE exclusive virtual summit. </p>
+    <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '80%', padding: '20px 0'}}>
+        <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+            placeholder="First name"
+            required
+            style={{margin: '10px 0', padding: '10px', width: '100%'}}
+        />
+        <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
+            placeholder="Last name"
+            required
+            style={{margin: '10px 0', padding: '10px', width: '100%'}}
+        />
+        <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+            style={{margin: '10px 0', padding: '10px', width: '100%'}}
+        />
+        <input
+            type="submit"
+            value="Claim Your Seat"
+            style={{width: '100%', padding: '10px', background: '#272122', color: '#fff', cursor: 'pointer', border: 'none'}}
+        />
+    </form>
+</div>
+</div>
             </div>
+            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
+                <h2 style={{ fontWeight: 'bold' }}>Our Prestigious Speakers</h2>
+                <Carousel autoPlay showThumbs={false} className="myCarousel">
+                    {testimonials.map((testimonial, index) => (
+                        <div key={index} className="testimonialItem" style={styles.testimonialItem}>
+                            <img src={testimonial.photo} alt="testimonial" style={styles.testimonialImage} />
+                            <p style={styles.testimonialName}>{testimonial.name}</p>
+                            <p>{testimonial.testimonial}</p>
+                        </div>
+                    ))}
+                </Carousel>
+            </div>
+            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
+                <p style={{color: '#272122', fontWeight: 'bold', fontSize: '24px'}}>Submit Dates: July 17th - 26th</p>
+            </div>
+            <Footer />
         </div>
     );
-};
+};    
 
 export default OptIn;
