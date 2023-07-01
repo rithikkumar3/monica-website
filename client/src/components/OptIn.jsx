@@ -7,51 +7,61 @@ import './OptIn.css';
 
 const testimonials = [
     {
+      id: 'speaker1',
       name: 'Ely Garcia',
       photo: '/Ely Garcia.jpg',
       testimonial: 'Music Medicine, Therapy using Art and Music, Singer, Songwriter, Music Producer'
     },
     {
+      id: 'speaker2',
       name: 'Faryl Moore',
       photo: '/Faryl Moore.jpg',
       testimonial: 'Master of Energetic Arts, Pranic Healing and Soul Coach, specializes in removing blocks, traumas, and negative energy and negative thought forms'
     },
     {
+      id: 'speaker3',
       name: 'Faye Lawande',
       photo: '/Faye Lawande.jpg',
       testimonial: 'Lawand-Internal Conflict Resolution Expert, Trauma-Informed Clinical Hypnotherapist, Stress Response Regulation Expert, and Nervous System Specialist'
     },
     {
+      id: 'speaker4',
       name: 'Julio Romero',
       photo: '/Juli Romero.png',
       testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health &amp; Spiritual Wellness Coach'
     },
     {
+      id: 'speaker5',
       name: 'Justine Lette',
       photo: '/Justine Lette.jpg',
       testimonial: 'Internationally recognized Hypnotherapy Trainer, Owner of Hypnosis New Zealand, and Creator of the Golden Thread Trauma Transformation Protocol'
     },
     {
+      id: 'speaker6',
       name: 'Karina Chapman',
       photo: '/Karina Chapman Headshot.jpg',
       testimonial: 'Conscious Connection Expert, Author, and Speaker'
     },
     {
+      id: 'speaker7',
       name: 'Markeeta Stokes',
       photo: '/Markeeta-Stokes.jpeg',
       testimonial: 'Author, Personal Development Coach, Owner of day spa, “The Esthetic Suite”'
     },
     {
+      id: 'speaker8',
       name: 'Meredith Orlowski',
       photo: '/Meredith-Orlowski.jpeg',
       testimonial: 'I found what I was looking for!'
     },
     {
+      id: 'speaker9',
       name: 'Tania Davis',
       photo: '/Tania Davis.jpg',
       testimonial: 'The Success Slow Coach™️,CCHt, DHypCoun, MPNLP, MNLPC, MMktg, BMgmt, Director of Mindful Impact™ Wellness Hub, Board Director of Australian Hypnotherapists Association'
     },
     {
+      id: 'speaker10',
       name: 'Zoe Anna Bell',
       photo: '/Zoe-Anna Bell.jpg',
       testimonial: '6x Selling Author, Breath Coach that leads a Path from Awareness to Embodied Emergence'
@@ -126,9 +136,11 @@ const OptIn = ({ setSubmitted, submitted }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const searchParams = new URLSearchParams(location.search);
+        const ref = searchParams.get('ref');
     
         try {
-            const data = { firstName, lastName, email };
+            const data = { firstName, lastName, email, ref };
     
             const response = await fetch('http://localhost:3000/posts', {
                 method: 'POST',
@@ -161,6 +173,9 @@ const OptIn = ({ setSubmitted, submitted }) => {
             </div>
             <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
                 <p style={{color: '#272122', fontFamily: 'Nourd Bold',fontWeight: 'bold', fontSize: '22px', letterSpacing: '1px', lineHeight: '1.5'}}> Get to know an amazing lineup of renowned experts in the fields of positive psychology, mindfulness, well-being, and personal development. They will share their wisdom, insights, and practical tips to help you find relief, cultivate happiness and lead a more meaningful life.</p>
+            </div>
+            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
+                <p style={{color: '#272122', fontWeight: 'bold', fontSize: '26px'}}>Summit Dates: July 17th - 26th</p>
             </div>
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginBottom: '20px'}}>
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'start', width: '70%', backgroundImage: "url(/form_background.png)", backgroundSize: 'cover', padding: '20px'}}>
@@ -218,9 +233,6 @@ const OptIn = ({ setSubmitted, submitted }) => {
                         </div>
                     ))}
                 </Carousel>
-            </div>
-            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
-                <p style={{color: '#272122', fontWeight: 'bold', fontSize: '24px'}}>Submit Dates: July 17th - 26th</p>
             </div>
             <Footer />
         </div>

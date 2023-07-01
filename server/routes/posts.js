@@ -17,7 +17,8 @@ router.post('/', async (req, res) => {
   const post = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email
+    email: req.body.email,
+    ref: req.body.ref
   };
 
   try {
