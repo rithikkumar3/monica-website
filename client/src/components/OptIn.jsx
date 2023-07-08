@@ -51,8 +51,8 @@ const testimonials = [
     {
       id: 'speaker8',
       name: 'Meredith Orlowski',
-      photo: '/Meredith-Orlowski.jpeg',
-      testimonial: 'I found what I was looking for!'
+      photo: '/Meredith-Orlowski.jpg',
+      testimonial: 'Holistic Health Coach with expertise in functional medicine, nutrition, mindset, meditation, and founder of Root to Leaf Wellness'
     },
     {
       id: 'speaker9',
@@ -65,6 +65,72 @@ const testimonials = [
       name: 'Zoe Anna Bell',
       photo: '/Zoe-Anna Bell.jpg',
       testimonial: '6x Selling Author, Breath Coach that leads a Path from Awareness to Embodied Emergence'
+    },
+    {
+        id: 'speaker11',
+        name: 'Aishah Tatum',
+        photo: '/Aishah Tatum.png',
+        testimonial: 'Founder of Integrative Wellness Coaching Program, Provides Women with Guidance, Resources and Tools to Detox their Minds, Bodies and Emotions'
+    },
+    {
+        id: 'speaker12',
+        name: 'Baylan Megino',
+        photo: '/Baylan Megino.jpg',
+        testimonial: '-Spiritual Mindset and Executive Coach. Founder of Global Dream Makers, Speaker, Podcast and Summit host, and Creator of the Life Framework known as the Dream Maker Matrix™'
+    },
+    {
+        id: 'speaker13',
+        name: 'Dr. Vicky Coleman',
+        photo: '/Dr. Vicky Coleman.jpg',
+        testimonial: 'Licensed Clinical Psychotherapist, Anger Management Facilitator, Master Addictions Counselor'
+    },
+    {
+        id: 'speaker14',
+        name: 'Karlonty Wallace',
+        photo: '/Karlonty Wallace.jpg',
+        testimonial: 'CEO and Owner of Pawasative Partnership LLC: Helping Women of Faith heal from trauma using dogs and furbabies as healing tools'
+    },
+    {
+        id: 'speaker15',
+        name: 'Maurice f martin',
+        photo: '/Maurice f martin.jpg',
+        testimonial: 'Spiritual Life Coach, 2x Bestselling Author, Host of Hope Rising podcast, Former co-host of TV show, “Getting the Word Out.”'
+    },
+    {
+        id: 'speaker16',
+        name: 'Megan Callus',
+        photo: '/Megan Callus.jpg',
+        testimonial: 'Neuroscience-Based Breathwork Expert who is Passionate about sharing the science and Power of breath to help people live productive, joyful, and empowered lives.'
+    },
+    {
+        id: 'speaker17',
+        name: 'Monica Khiatani',
+        photo: '/Monica khiatani.jpg',
+        testimonial: 'Spiritual Mentor&amp; Therapist, Subconscious Mind Trainer, ICF Accredited Life &amp; Mindset Coach, Mindfulness Expert, Published Author, Podcast Host'
+    },
+    {
+        id: 'speaker18',
+        name: 'Moriah Williams',
+        photo: '/Moriah Williams.jpg',
+        testimonial: 'Holistic Practioner, Writer, and Portal Witch'
+    },
+    {
+        id: 'speaker19',
+        name: 'Paula Kramer',
+        photo: '/Paula Kramer Photo.jpg',
+        testimonial: 'International Soft Skills Mastermind &amp; Teacher International Bestselling Author, International Professional Speaker, International TV Producer'
+    },
+    {
+        id: 'speaker20',
+        name: 'Sharlene-Lynch',
+        photo: '/Sharlene-Lynch.jpg',
+        testimonial: 'Lynch-International Speaker, Multi-Passionate Entrepreneur, Veteran Workshop Facilitator, Business Coach, background in Accounting and Holistic psychology, founder of Healing Through Love'
+    },
+    {
+        id: 'speaker21',
+        name: 'Terrance Dawkins',
+        photo: '/Terrance Dawkins.jpg',
+        testimonial: 'LISW-CP, CEO and Owner of Missing Pieces Counseling Services'
     },
   ];
 

@@ -7,7 +7,7 @@ const defaultClient = SquareConnect.ApiClient.instance;
 const oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = process.env.SQUARE_ACCESS_TOKEN;
 const paymentsApi = new SquareConnect.PaymentsApi();
-
+const nodemailer = require('nodemailer');
 const squareClient = require('../services/squareClient');
 
 
@@ -28,6 +28,30 @@ router.post('/', async (req, res) => {
     };
     const command = new PutItemCommand(params);
     const savedPost = await ddbClient.send(command);
+    
+    // Send email after saving the post
+    let transporter = nodemailer.createTransport({
+      service: 'Yahoo',
+      auth: {
+        user: process.env.YOUR_EMAIL, // replace with your Yahoo email
+        pass: process.env.YOUR_PASSWORD // replace with your Yahoo password
+      }
+    });
+
+    let mailOptions = {
+      from: process.env.YOUR_EMAIL, // sender address
+      to: req.body.email, // list of receivers
+      subject: 'Thank You For Signing Up', // Subject line
+      text: `Hello ${req.body.firstName} ${req.body.lastName}, Thank you for signing up!` // plain text body
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+    });
+    
     res.json(savedPost);
   } catch (err) {
     res.json({ message: err });
