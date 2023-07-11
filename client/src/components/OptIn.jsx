@@ -7,121 +7,121 @@ import './OptIn.css';
 
 const testimonials = [
     {
-      id: 'speaker1',
+      id: 'ely',
       name: 'Ely Garcia',
       photo: '/Ely Garcia.jpg',
       testimonial: 'Music Medicine, Therapy using Art and Music, Singer, Songwriter, Music Producer'
     },
     {
-      id: 'speaker2',
+      id: 'faryl',
       name: 'Faryl Moore',
       photo: '/Faryl Moore.jpg',
       testimonial: 'Master of Energetic Arts, Pranic Healing and Soul Coach, specializes in removing blocks, traumas, and negative energy and negative thought forms'
     },
     {
-      id: 'speaker3',
+      id: 'faye',
       name: 'Faye Lawande',
       photo: '/Faye Lawande.jpg',
       testimonial: 'Lawand-Internal Conflict Resolution Expert, Trauma-Informed Clinical Hypnotherapist, Stress Response Regulation Expert, and Nervous System Specialist'
     },
     {
-      id: 'speaker4',
+      id: 'julio',
       name: 'Julio Romero',
       photo: '/Juli Romero.png',
       testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health &amp; Spiritual Wellness Coach'
     },
     {
-      id: 'speaker5',
+      id: 'justine',
       name: 'Justine Lette',
       photo: '/Justine Lette.jpg',
       testimonial: 'Internationally recognized Hypnotherapy Trainer, Owner of Hypnosis New Zealand, and Creator of the Golden Thread Trauma Transformation Protocol'
     },
     {
-      id: 'speaker6',
+      id: 'karina',
       name: 'Karina Chapman',
       photo: '/Karina Chapman Headshot.jpg',
       testimonial: 'Conscious Connection Expert, Author, and Speaker'
     },
     {
-      id: 'speaker7',
+      id: 'markeeta',
       name: 'Markeeta Stokes',
       photo: '/Markeeta-Stokes.jpeg',
       testimonial: 'Author, Personal Development Coach, Owner of day spa, “The Esthetic Suite”'
     },
     {
-      id: 'speaker8',
+      id: 'meredith',
       name: 'Meredith Orlowski',
       photo: '/Meredith-Orlowski.jpg',
       testimonial: 'Holistic Health Coach with expertise in functional medicine, nutrition, mindset, meditation, and founder of Root to Leaf Wellness'
     },
     {
-      id: 'speaker9',
+      id: 'tania',
       name: 'Tania Davis',
       photo: '/Tania Davis.jpg',
       testimonial: 'The Success Slow Coach™️,CCHt, DHypCoun, MPNLP, MNLPC, MMktg, BMgmt, Director of Mindful Impact™ Wellness Hub, Board Director of Australian Hypnotherapists Association'
     },
     {
-      id: 'speaker10',
+      id: 'zoe',
       name: 'Zoe Anna Bell',
       photo: '/Zoe-Anna Bell.jpg',
       testimonial: '6x Selling Author, Breath Coach that leads a Path from Awareness to Embodied Emergence'
     },
     {
-        id: 'speaker11',
+        id: 'aishah',
         name: 'Aishah Tatum',
         photo: '/Aishah Tatum.png',
         testimonial: 'Founder of Integrative Wellness Coaching Program, Provides Women with Guidance, Resources and Tools to Detox their Minds, Bodies and Emotions'
     },
     {
-        id: 'speaker12',
+        id: 'baylan',
         name: 'Baylan Megino',
         photo: '/Baylan Megino.jpg',
         testimonial: '-Spiritual Mindset and Executive Coach. Founder of Global Dream Makers, Speaker, Podcast and Summit host, and Creator of the Life Framework known as the Dream Maker Matrix™'
     },
     {
-        id: 'speaker13',
+        id: 'vicky',
         name: 'Dr. Vicky Coleman',
         photo: '/Dr. Vicky Coleman.jpg',
         testimonial: 'Licensed Clinical Psychotherapist, Anger Management Facilitator, Master Addictions Counselor'
     },
     {
-        id: 'speaker14',
+        id: 'karlonty',
         name: 'Karlonty Wallace',
         photo: '/Karlonty Wallace.jpg',
         testimonial: 'CEO and Owner of Pawasative Partnership LLC: Helping Women of Faith heal from trauma using dogs and furbabies as healing tools'
     },
     {
-        id: 'speaker15',
+        id: 'maurice',
         name: 'Maurice f martin',
         photo: '/Maurice f martin.jpg',
         testimonial: 'Spiritual Life Coach, 2x Bestselling Author, Host of Hope Rising podcast, Former co-host of TV show, “Getting the Word Out.”'
     },
     {
-        id: 'speaker16',
+        id: 'megan',
         name: 'Megan Callus',
         photo: '/Megan Callus.jpg',
         testimonial: 'Neuroscience-Based Breathwork Expert who is Passionate about sharing the science and Power of breath to help people live productive, joyful, and empowered lives.'
     },
     {
-        id: 'speaker17',
+        id: 'monica',
         name: 'Monica Khiatani',
         photo: '/Monica khiatani.jpg',
         testimonial: 'Spiritual Mentor&amp; Therapist, Subconscious Mind Trainer, ICF Accredited Life &amp; Mindset Coach, Mindfulness Expert, Published Author, Podcast Host'
     },
     {
-        id: 'speaker18',
+        id: 'moriah',
         name: 'Moriah Williams',
         photo: '/Moriah Williams.jpg',
         testimonial: 'Holistic Practioner, Writer, and Portal Witch'
     },
     {
-        id: 'speaker19',
+        id: 'paula',
         name: 'Paula Kramer',
         photo: '/Paula Kramer Photo.jpg',
         testimonial: 'International Soft Skills Mastermind &amp; Teacher International Bestselling Author, International Professional Speaker, International TV Producer'
     },
     {
-        id: 'speaker20',
+        id: 'sharlene',
         name: 'Sharlene-Lynch',
         photo: '/Sharlene-Lynch.jpg',
         testimonial: 'Lynch-International Speaker, Multi-Passionate Entrepreneur, Veteran Workshop Facilitator, Business Coach, background in Accounting and Holistic psychology, founder of Healing Through Love'
@@ -208,7 +208,7 @@ const OptIn = ({ setSubmitted, submitted }) => {
         try {
             const data = { firstName, lastName, email, ref };
     
-            const response = await fetch('http://localhost:3000/posts', {
+            const response = await fetch('http://localhost:3000/posts/save-optin-user', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)

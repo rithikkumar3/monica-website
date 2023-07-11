@@ -1,23 +1,8 @@
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import OptIn from './components/OptIn';
-// import ThankYou from './components/ThankYou';
-
-// const AppRoutes = () => (
-//   <Router>
-//     <Routes>
-//       <Route path="/" element={<OptIn />} />
-//       <Route path="/thankyou" element={<ThankYou />} />
-//     </Routes>
-//   </Router>
-// );
-
-// export default AppRoutes;
-
-
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import OptIn from './components/OptIn';
 import ThankYou from './components/ThankYou';
+import PaymentConfirmed from './components/PaymentConfirmed';
 
 const OptInWithRef = (props) => {
   const location = useLocation();
@@ -43,6 +28,7 @@ const AppRoutes = () => {
         <Route path="/" element={<OptIn setSubmitted={setSubmitted} submitted={submitted} />} />
         <Route path="/optin" element={<OptInWithRef setSubmitted={setSubmitted} submitted={submitted} />} />
         <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/payment-confirmed" element={<PaymentConfirmed />} />
       </Routes>
     </Router>
   );

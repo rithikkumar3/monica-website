@@ -1,12 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CardNumberElement, CardExpiryElement, CardCvcElement, useStripe, useElements } from '@stripe/react-stripe-js';
-// import { loadStripe } from '@stripe/stripe-js';
-
-// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-
-
-console.log(process.env.STRIPE_PUBLISHABLE_KEY);
-
+import axios from 'axios'; 
+import { useNavigate } from 'react-router-dom';
 
 const ELEMENT_OPTIONS = {
   style: {
@@ -26,6 +21,10 @@ const ELEMENT_OPTIONS = {
 const StripeCheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
+
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +35,7 @@ const StripeCheckoutForm = () => {
 
     const cardNumberElement = elements.getElement(CardNumberElement);
 
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardNumberElement,
     });
@@ -45,6 +44,18 @@ const StripeCheckoutForm = () => {
       console.log('[error]', error);
     } else {
       console.log('[PaymentMethod]', paymentMethod);
+      axios
+        .post('http://localhost:3000/posts/save-thankyou-user', {
+          fullName: fullName,
+          email: email,
+        })
+        .then((response) => {
+          console.log('Saved successfully', response);
+          navigate('/payment-confirmed'); // Navigate to the payment confirmation page
+        })
+        .catch((error) => {
+          console.log('Error saving to DynamoDB', error);
+        });
     }
   };
 
@@ -54,12 +65,13 @@ const StripeCheckoutForm = () => {
     boxSizing: 'border-box',
     border: '1px solid rgba(0,0,0,0.2)',
     borderRadius: '4px',
+    backgroundColor: 'transparent', // Add this line
   };
 
   const paymentBoxStyle = {
     display: 'flex',
     flexDirection: 'column',
-    width: '700px', // Increase the width of the payment box
+    width: '700px',
     padding: '30px',
     borderRadius: '10px',
     boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
@@ -71,6 +83,18 @@ const StripeCheckoutForm = () => {
     <div style={paymentBoxStyle}>
       <h2>Purchase your VIP Pass!!!</h2>
       <form onSubmit={handleSubmit} style={fieldStyle}>
+        <div>
+          <label>Full Name</label>
+          <div style={fieldStyle}>
+            <input type="text" placeholder="Your Name" style={fieldStyle} onChange={e => setFullName(e.target.value)} />
+          </div>
+        </div>
+        <div>
+          <label>Email Address</label>
+          <div style={fieldStyle}>
+            <input type="email" placeholder="Youe Email Address" style={fieldStyle} onChange={e => setEmail(e.target.value)} />
+          </div>
+        </div>
         <div>
           <label>Card number</label>
           <div style={fieldStyle}>
@@ -89,7 +113,22 @@ const StripeCheckoutForm = () => {
             <CardCvcElement options={ELEMENT_OPTIONS} />
           </div>
         </div>
-        <button type="submit" disabled={!stripe} style={{marginTop: '1rem', fontSize: '1.5rem', padding: '10px 20px', width: '100%', backgroundColor: '#424770', color: '#fff', border: 'none', borderRadius: '4px'}}>Pay</button>
+        <button
+          type="submit"
+          disabled={!stripe}
+          style={{
+            marginTop: '1rem',
+            fontSize: '1.5rem',
+            padding: '10px 20px',
+            width: '100%',
+            backgroundColor: '#424770',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px'
+          }}
+        >
+          Pay
+        </button>
       </form>
     </div>
   );

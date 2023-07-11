@@ -23,7 +23,7 @@
 }
 
 .myCarousel .control-dots {
-    bottom: -25px; /* Adjust this value as needed */
+    bottom: -25px; 
 }
 
 .myCarousel .legend {
