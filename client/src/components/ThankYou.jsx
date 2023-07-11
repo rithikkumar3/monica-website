@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SquarePaymentForm from './SquarePaymentForm';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import StripeCheckoutForm from './StripeCheckoutForm';
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const ThankYou = () => {
   const navigate = useNavigate();
@@ -12,7 +15,7 @@ const ThankYou = () => {
   }, [navigate]);
 
   const contentContainerStyle = {
-    backgroundColor: 'rgba(255,255,255,0.8)', // add opacity to make text readable on the background
+    backgroundColor: 'rgba(173, 216, 230, 0.3)', // add opacity to make text readable on the background
     borderRadius: '5px',
     padding: '20px',
     margin: '20px',
@@ -68,9 +71,9 @@ const ThankYou = () => {
           <p style={styles.subtitle}>Your form has been submitted successfully.</p>
         </div>
       </div>
-      <div style={styles.paymentContainer}>
-        <SquarePaymentForm />
-      </div>
+      <Elements stripe={stripePromise}>
+        <StripeCheckoutForm />
+      </Elements>
     </div>
   );
 };
