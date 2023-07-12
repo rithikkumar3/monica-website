@@ -3,7 +3,8 @@ const router = express.Router();
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 const { marshall } = require("@aws-sdk/util-dynamodb");
 const nodemailer = require('nodemailer');
-const ddbClient = new DynamoDBClient({ region: "us-east-2" }); // Replace with your region
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Add Stripe
+const ddbClient = new DynamoDBClient({ region: "us-east-2" });// Replace with your region
 
 router.post('/save-optin-user', async (req, res) => {
   const post = {
@@ -57,6 +58,20 @@ router.post('/save-thankyou-user', async (req, res) => {
   };
 
   try {
+    // Stripe payment processing
+    const { amount, id } = req.body;
+    const payment = await stripe.paymentIntents.create({
+      amount,
+      currency: 'USD',
+      description: 'VIP Pass',
+      payment_method: id,
+      confirm: true
+    });
+
+    if (payment.status !== "succeeded") {
+      return res.json({ message: 'Payment failed', success: false });
+    }
+
     const vipParams = {
       TableName: "vip-table", // replace with DynamoDB table name
       Item: marshall(vipMember),
@@ -86,9 +101,10 @@ router.post('/save-thankyou-user', async (req, res) => {
       console.log('Message sent: %s', info.messageId);   
     });
 
-    res.json({savedVipMember});
+    res.json({ message: 'Payment successful', success: true, savedVipMember });
+
   } catch (err) {
-    res.json({ message: err });
+    res.json({ message: err, success: false });
   }
 });
 

@@ -48,10 +48,16 @@ const StripeCheckoutForm = () => {
         .post('http://localhost:3000/posts/save-thankyou-user', {
           fullName: fullName,
           email: email,
+          id: paymentMethod.id,
+          amount: 60 // Replace this with the amount to charge
         })
         .then((response) => {
-          console.log('Saved successfully', response);
-          navigate('/payment-confirmed'); // Navigate to the payment confirmation page
+          if (response.data.success) {
+            console.log('Successful payment');
+            navigate('/payment-confirmed'); // Navigate to the payment confirmation page
+          } else {
+            console.log('Failed payment');
+          }
         })
         .catch((error) => {
           console.log('Error saving to DynamoDB', error);

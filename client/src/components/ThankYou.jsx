@@ -14,7 +14,7 @@ const ThankYou = () => {
       navigate('/optin');
     }
 
-    window.scrollTo(0, 0); // Scroll to top on component mount
+    window.scrollTo(0, 0); 
   }, [navigate]);
 
   const Footer = () => {
