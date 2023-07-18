@@ -38,4 +38,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-app.listen(3000, () => console.log('Server running'));
+app.listen(5000, () => console.log('Server running'));
