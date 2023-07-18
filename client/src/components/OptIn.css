@@ -53,3 +53,73 @@
 .testimonialItem p {
     margin: 0; 
 }
+
+.decoratedText {
+    font-family: 'Arcadian', sans-serif;
+    font-weight: normal;
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+}
+
+/* .decoratedText::before, */
+.decoratedText::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: #272122;
+}
+
+.decoratedText::before {
+    top: 0;
+}
+
+.decoratedText::after {
+    bottom: 0;
+}
+
+.bubble {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: #272122;
+    border-radius: 50%;
+}
+
+.bubble.start {
+    left: -5px;
+}
+
+.bubble.end {
+    right: -5px;
+}
+
+@font-face {
+    font-family: 'Nourd Bold';
+    src: url('../../public/fonts/Nord\ Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arcadian';
+    src: url('../../public/fonts/Arcadian.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../../public/fonts/Agrandir-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agrandir-Bold';
+    src: url('../../public/fonts/Agrandir-TextBold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

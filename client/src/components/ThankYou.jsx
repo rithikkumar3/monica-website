@@ -19,9 +19,25 @@ const ThankYou = () => {
 
   const Footer = () => {
     return (
-      <footer style={{ background: '#c5c2a3', padding: '20px', marginTop: '20px', width: '100%', textAlign: 'center', color: '#272122' }}>
-        <p style={{ margin: 0 }}>We can't wait to have you with us at the Happiness Summit 2023, where you'll discover the keys to lasting happiness and build a vibrant community of support. See you there!</p>
-      </footer>
+        <footer style={{ 
+            background: '#c5c2a3', 
+            padding: '20px', 
+            marginTop: '20px', 
+            width: '100%', 
+            textAlign: 'center', 
+            color: '#272122', 
+            fontFamily: 'Arcadian', 
+            fontWeight: 'normal'
+        }}>
+            <p style={{ 
+                margin: 0, 
+                fontFamily: 'Arcadian', 
+                fontWeight: 'normal'
+            }}>
+            We can't wait to have you join us at the Happiness Summit 2023, where you'll discover the keys to lasting happiness and build a vibrant community of support. See you there!
+            </p>
+        </footer>
+        
     );
   };
 
@@ -62,13 +78,13 @@ const ThankYou = () => {
     title: {
       fontSize: '2.5rem',
       color: '#343a40',
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: 'Arcadian, sans-serif',
       marginBottom: '10px',
     },
     subtitle: {
       fontSize: '1.5rem',
       color: '#6c757d',
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: 'Agrandir, Arial, sans-serif',
     },
     contentContainer: contentContainerStyle,
     paymentContainer: paymentContainerStyle,
@@ -78,8 +94,15 @@ const ThankYou = () => {
     <div style={styles.container}>
       <div style={styles.contentContainer}>
         <div style={styles.content}>
-          <h2 style={styles.title}>Thank You!</h2>
-          <p style={styles.subtitle}>Your form has been submitted successfully.</p>
+          <h2 style={styles.title}>Thank You For Signing Up to the Happiness Summit!</h2>
+          <h2 style={styles.title}>Will I ever be Happy? Finding Joy Amidst Depression and Anxiety</h2>
+          <p style={styles.subtitle}>We are thrilled to accompany you on this incredible journey of exploring and enhancing joy in your
+life!!! We have curated a diverse lineup of world-renowned speakers, experts, and thought leaders who will
+share their wisdom and insights on various aspects of happiness, well-being, and personal development
+to free your life from depression and anxiety and lift you to a higher ground. This collection of 22 expert
+interviews is available to be purchased as a VIP package for only $47!!! This purchase will ALSO provide
+you with a free front row ticket to my upcoming 3-day seminar &quot;Happiness for Dummies.&quot; To access this
+incredible package, fill out the form below!!!</p>
         </div>
       </div>
       <div style={styles.paymentContainer}>

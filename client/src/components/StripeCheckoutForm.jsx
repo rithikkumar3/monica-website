@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CardNumberElement, CardExpiryElement, CardCvcElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import axios from 'axios'; 
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const ELEMENT_OPTIONS = {
@@ -42,6 +42,7 @@ const StripeCheckoutForm = () => {
 
     if (error) {
       console.log('[error]', error);
+      alert('Payment failed. Please try again.'); // Show pop-up alert
     } else {
       console.log('[PaymentMethod]', paymentMethod);
       axios
@@ -49,18 +50,20 @@ const StripeCheckoutForm = () => {
           fullName: fullName,
           email: email,
           id: paymentMethod.id,
-          amount: 60 // Replace this with the amount to charge
+          amount: 60 // Replace this with the amount to charge 0.0X (X/100)
         })
         .then((response) => {
           if (response.data.success) {
             console.log('Successful payment');
-            navigate('/payment-confirmed'); // Navigate to the payment confirmation page
+            navigate('/payment-confirmed'); // Navigating to the payment confirmation page
           } else {
             console.log('Failed payment');
+            alert('Payment failed. Please try again.'); // Show pop-up alert
           }
         })
         .catch((error) => {
           console.log('Error saving to DynamoDB', error);
+          alert('Payment failed. Please try again.'); // Show pop-up alert
         });
     }
   };
@@ -81,24 +84,25 @@ const StripeCheckoutForm = () => {
     padding: '30px',
     borderRadius: '10px',
     boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
+    fontFamily: 'Arcadian, Arial, sans-serif',
     alignItems: 'center',
     backgroundColor: 'rgba(255, 165, 0, 0.1)',
   };
 
   return (
     <div style={paymentBoxStyle}>
-      <h2>Purchase your VIP Pass!!!</h2>
+      <h2>Purchase your VIP Package!!!</h2>
       <form onSubmit={handleSubmit} style={fieldStyle}>
         <div>
           <label>Full Name</label>
           <div style={fieldStyle}>
-            <input type="text" placeholder="Your Name" style={fieldStyle} onChange={e => setFullName(e.target.value)} />
+            <input type="text" placeholder="Your Name" style={fieldStyle} onChange={(e) => setFullName(e.target.value)} />
           </div>
         </div>
         <div>
           <label>Email Address</label>
           <div style={fieldStyle}>
-            <input type="email" placeholder="Youe Email Address" style={fieldStyle} onChange={e => setEmail(e.target.value)} />
+            <input type="email" placeholder="Your Email Address" style={fieldStyle} onChange={(e) => setEmail(e.target.value)} />
           </div>
         </div>
         <div>
@@ -130,7 +134,7 @@ const StripeCheckoutForm = () => {
             backgroundColor: '#424770',
             color: '#fff',
             border: 'none',
-            borderRadius: '4px'
+            borderRadius: '4px',
           }}
         >
           Pay

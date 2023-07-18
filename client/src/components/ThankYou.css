@@ -2,3 +2,24 @@
     position: relative;
     top: -10px; 
 }
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../../public/fonts/Agrandir-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agrandir-Bold';
+    src: url('../../public/fonts/Agrandir-TextBold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arcadian';
+    src: url('../../public/fonts/Arcadian.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
