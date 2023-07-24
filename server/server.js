@@ -28,6 +28,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/posts', postRoute);
+app.get('/healthz', function (req, res) {
+  res.status(200).send("<h1>OK</h1>");
+});
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')));

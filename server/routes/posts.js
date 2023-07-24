@@ -6,9 +6,6 @@ const nodemailer = require('nodemailer');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Add Stripe
 const ddbClient = new DynamoDBClient({ region: "us-east-2" });// Replace with your region
 
-router.get('/health', function (req, res) {
-  res.status(200).send("OK");
-});
 
 router.post('/save-optin-user', async (req, res) => {
   const post = {
