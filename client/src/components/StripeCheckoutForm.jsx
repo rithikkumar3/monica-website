@@ -46,7 +46,7 @@ const StripeCheckoutForm = () => {
     } else {
       console.log('[PaymentMethod]', paymentMethod);
       axios
-        .post('http://localhost:3000/posts/save-thankyou-user', {
+        .post('http://3.145.56.12/posts/save-thankyou-user', {
           fullName: fullName,
           email: email,
           id: paymentMethod.id,
