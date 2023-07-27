@@ -224,7 +224,7 @@ const OptIn = ({ setSubmitted, submitted }) => {
         try {
             const data = { firstName, lastName, email, ref };
     
-            const response = await fetch('http://localhost:3000/posts/save-optin-user', {
+            const response = await fetch('http://3.145.56.12/posts/save-optin-user', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
