@@ -223,7 +223,7 @@ const OptIn = ({ setSubmitted, submitted }) => {
   
       try {
           const data = { firstName, lastName, email, ref };
-          const response = await fetch('http:////18.189.30.63//save-optin-user', {
+          const response = await fetch('http://18.189.30.63/save-optin-user', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data)
