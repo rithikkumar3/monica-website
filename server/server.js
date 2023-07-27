@@ -1,19 +1,3 @@
-// require('dotenv').config();
-
-// const express = require('express');
-// const app = express();
-// const bodyParser = require('body-parser');
-// const postRoute = require('./routes/posts');
-// const cors = require('cors');
-// app.use(cors());
-
-// app.use(bodyParser.json());
-
-// app.use('/posts', postRoute);
-
-// app.listen(3000, () => console.log('Server running'));
-
-
 require('dotenv').config();
 
 const express = require('express');
@@ -41,4 +25,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-app.listen(5000, () => console.log('Server running'));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// app.listen(5000, () => console.log('Server running'));
