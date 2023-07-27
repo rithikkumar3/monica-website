@@ -25,6 +25,9 @@ app.post('/save-optin-user', async (req, res) => {
   try {
     const params = {
       TableName: "finding-joy-table", // replace with DynamoDB table name
+      Key: {
+        "email": "johndoe@example.com"
+      },
       Item: marshall(post),
     };
     const command = new PutItemCommand(params);
