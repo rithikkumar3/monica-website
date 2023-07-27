@@ -217,36 +217,37 @@ const OptIn = ({ setSubmitted, submitted }) => {
     }, [location, navigate, submitted]);
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        const searchParams = new URLSearchParams(location.search);
-        const ref = searchParams.get('ref');
-    
-        try {
-            const data = { firstName, lastName, email, ref };
-    
-            const response = await fetch('http://3.145.56.12/posts/save-optin-user', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-    
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            } else {
-                const result = await response.json();
-                console.log(result);
-    
-                setEmail('');
-                setFirstName('');
-                setLastName('');
-                localStorage.setItem('formFilled', 'true');
-                navigate('/thankyou');
-            }
-    
-        } catch (error) {
-            console.error('An error occurred:', error);
-        }
-    };
+      event.preventDefault();
+      const searchParams = new URLSearchParams(location.search);
+      const ref = searchParams.get('ref');
+  
+      try {
+          const data = { firstName, lastName, email, ref };
+          const response = await fetch('http://13.59.191.132/save-optin-user', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+          });
+  
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          } else {
+              const result = await response.json();
+              console.log(result);
+  
+              setEmail('');
+              setFirstName('');
+              setLastName('');
+              localStorage.setItem('formFilled', 'true');
+          }
+  
+      } catch (error) {
+          console.error('An error occurred:', error);
+      } finally {
+          navigate('/thankyou');
+      }
+  };
+
     
     return (
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#b3c5a9', overflowY: 'auto'}}>
