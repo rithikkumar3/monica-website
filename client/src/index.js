@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const cors = require('cors');
 App.use(cors({
-    origin: '*'
+    origin: 'http://18.189.30.63:3001'
 }));
 root.render(
   <React.StrictMode>
