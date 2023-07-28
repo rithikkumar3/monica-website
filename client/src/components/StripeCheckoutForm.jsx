@@ -46,7 +46,7 @@ const StripeCheckoutForm = () => {
     } else {
       console.log('[PaymentMethod]', paymentMethod);
       axios
-        .post('https://www.findingjoysummit.net/save-thankyou-user', {
+        .post('https://www.findingjoysummit.net/save-thankyou-user/', {
           fullName: fullName,
           email: email,
           id: paymentMethod.id,
