@@ -7,10 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-App.get('/colors',(req,res)=>{
-  res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.json(colors)
-  })
+
 root.render(
   <React.StrictMode>
     <App />
