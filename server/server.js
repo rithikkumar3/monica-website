@@ -11,7 +11,9 @@ const nodemailer = require('nodemailer');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const ddbClient = new DynamoDBClient({ region: "us-east-2" });
 
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(bodyParser.json());
 
 app.post('/save-optin-user', async (req, res) => {
