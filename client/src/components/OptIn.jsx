@@ -252,7 +252,7 @@ const OptIn = ({ setSubmitted, submitted }) => {
     return (
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#b3c5a9', overflowY: 'auto'}}>
             <div style={{width: '100%', overflow: 'hidden'}}>
-                <img src="/banner monica.png" alt="Banner" style={{width: '100%', height: 'auto'}}/>
+                <img src="/final banner.png" alt="Banner" style={{width: '100%', height: 'auto'}}/>
             </div>
             <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
             <div className="decoratedText">
