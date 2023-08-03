@@ -123,3 +123,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@media screen and (max-width: 480px) {
+    .myCarousel .carousel .slide {
+      width: calc(100% - 30px); /* adjust the value as needed */
+      margin: 0 auto;
+    }
+  }

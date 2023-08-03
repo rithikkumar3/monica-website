@@ -77,22 +77,29 @@ const StripeCheckoutForm = () => {
     backgroundColor: 'transparent', // Add this line
   };
 
-  const paymentBoxStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '700px',
-    padding: '30px',
-    borderRadius: '10px',
-    boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
-    fontFamily: 'Arcadian, Arial, sans-serif',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 165, 0, 0.1)',
-  };
+  const formStyle = {
+    width: '100%',
+    padding: '10px 0px', // Adjust padding as needed
+    boxSizing: 'border-box',
+};
+
+const paymentBoxStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: '700px', // Changed from width to maxWidth
+  width: '100%',    
+  padding: '30px',
+  borderRadius: '10px',
+  boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
+  fontFamily: 'Arcadian, Arial, sans-serif',
+  alignItems: 'center',
+  backgroundColor: 'rgba(255, 165, 0, 0.1)',
+};
 
   return (
     <div style={paymentBoxStyle}>
       <h2>Purchase your VIP Package!!!</h2>
-      <form onSubmit={handleSubmit} style={fieldStyle}>
+      <form onSubmit={handleSubmit} style={formStyle}>
         <div>
           <label>Full Name</label>
           <div style={fieldStyle}>

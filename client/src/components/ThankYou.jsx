@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import StripeCheckoutForm from './StripeCheckoutForm';
@@ -7,15 +6,8 @@ import StripeCheckoutForm from './StripeCheckoutForm';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const ThankYou = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!localStorage.getItem('formFilled')) {
-      navigate('/optin');
-    }
-
-    window.scrollTo(0, 0); 
-  }, [navigate]);
+  
+  window.scrollTo(0, 0); 
 
   const Footer = () => {
     return (
@@ -76,13 +68,13 @@ const ThankYou = () => {
       margin: '20px',
     },
     title: {
-      fontSize: '2.5rem',
+      fontSize: window.innerWidth <= 768 ? '1.5rem' : '2.5rem',
       color: '#343a40',
       fontFamily: 'Arcadian, sans-serif',
       marginBottom: '10px',
     },
     subtitle: {
-      fontSize: '1.5rem',
+      fontSize: window.innerWidth <= 768 ? '1rem' : '1.5rem',
       color: '#6c757d',
       fontFamily: 'Agrandir, Arial, sans-serif',
     },

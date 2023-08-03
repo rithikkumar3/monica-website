@@ -28,7 +28,7 @@ const testimonials = [
       id: 'julio',
       name: 'Julio Romero',
       photo: '/Juli Romero.png',
-      testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health &amp; Spiritual Wellness Coach'
+      testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health, Spiritual Wellness Coach'
     },
     {
       id: 'justine',
@@ -76,7 +76,7 @@ const testimonials = [
         id: 'baylan',
         name: 'Baylan Megino',
         photo: '/Baylan Megino.jpg',
-        testimonial: '-Spiritual Mindset and Executive Coach. Founder of Global Dream Makers, Speaker, Podcast and Summit host, and Creator of the Life Framework known as the Dream Maker Matrix™'
+        testimonial: 'Spiritual Mindset and Executive Coach. Founder of Global Dream Makers, Speaker, Podcast and Summit host, and Creator of the Life Framework known as the Dream Maker Matrix™'
     },
     {
         id: 'vicky',
@@ -106,7 +106,7 @@ const testimonials = [
         id: 'monica',
         name: 'Monica Khiatani',
         photo: '/Monica khiatani.jpg',
-        testimonial: 'Spiritual Mentor&amp; Therapist, Subconscious Mind Trainer, ICF Accredited Life &amp; Mindset Coach, Mindfulness Expert, Published Author, Podcast Host'
+        testimonial: 'Spiritual Mentor Therapist, Subconscious Mind Trainer, ICF Accredited Life Mindset Coach, Mindfulness Expert, Published Author, Podcast Host'
     },
     {
         id: 'moriah',
@@ -118,7 +118,7 @@ const testimonials = [
         id: 'paula',
         name: 'Paula Kramer',
         photo: '/Paula Kramer Photo.jpg',
-        testimonial: 'International Soft Skills Mastermind &amp; Teacher International Bestselling Author, International Professional Speaker, International TV Producer'
+        testimonial: 'International Soft Skills Mastermind Teacher International Bestselling Author, International Professional Speaker, International TV Producer'
     },
     {
         id: 'sharlene',
@@ -158,12 +158,39 @@ const testimonials = [
     );
 };
 
-const OptIn = ({ setSubmitted, submitted }) => {
+const OptIn = ({ submitted }) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
+    const [setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+}, [setWindowWidth]);
+
+const [isMobile, setMobile] = useState(window.innerWidth < 768);
+
+useEffect(() => {
+  const handleResize = () => {
+    setMobile(window.innerWidth < 768);
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
 
 
     const styles = {
@@ -249,95 +276,95 @@ const OptIn = ({ setSubmitted, submitted }) => {
   };
 
     
-    return (
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#b3c5a9', overflowY: 'auto'}}>
-            <div style={{width: '100%', overflow: 'hidden'}}>
-                <img src="/final banner.png" alt="Banner" style={{width: '100%', height: 'auto'}}/>
-            </div>
-            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
-            <div className="decoratedText">
-    <p style={{color: '#272122', fontFamily: 'Arcadian', fontSize: '22px', letterSpacing: '1px', lineHeight: '1.5', paddingLeft: '40px', paddingRight: '40px', paddingTop: '1px'}}>
-        Get to know an amazing lineup of renowned experts in the fields of positive psychology, mindfulness, well-being, and personal development. They will share their wisdom, insights, and practical tips to help you find relief, cultivate happiness and lead a more meaningful life.
-    </p>
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#b3c5a9', overflowY: 'auto'}}>
+        <div style={{width: '100%', overflow: 'hidden'}}>
+            <img src="/banner monica.png" alt="Banner" style={{width: '100%', height: 'auto'}}/>
+        </div>
+        <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
+        <div className="decoratedText">
+<p style={{color: '#272122', fontFamily: 'Arcadian', fontSize: isMobile ? '15px' : '22px', letterSpacing: '1px', lineHeight: '1.5', paddingLeft: '40px', paddingRight: '40px', paddingTop: '1px'}}>
+    Get to know an amazing lineup of renowned experts in the fields of positive psychology, mindfulness, well-being, and personal development. They will share their wisdom, insights, and practical tips to help you find relief, cultivate happiness and lead a more meaningful life.
+</p>
 </div>
 </div>
 
 <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
-    <p style={{color: '#272122', fontWeight: 'bold', fontSize: '26px', fontFamily: 'Arcadian'}}>SUMMIT DATES : JULY 17th - 26th</p>
+<p style={{color: '#272122', fontWeight: 'bold', fontSize: '26px', fontFamily: 'Arcadian'}}>SUMMIT DATES : JULY 17th - 26th</p>
 </div>
 
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginBottom: '20px' }}>
-  <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '70%', backgroundImage: "url(/form_background.png)", backgroundSize: 'cover', padding: '20px' }}>
-    <div style={{ width: '35%', marginRight: '20px' }}>
-      <video style={{ width: '100%', height: 'auto', objectFit: 'contain' }} controls>
-        <source src="IMG_6071.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div style={{ background: 'transparent', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', flexGrow: 1 }}>
-    <p style={{ color: '#272122', fontFamily: 'Agrandir-Bold', fontWeight: 'bold', fontSize: '25px', textAlign: 'center', marginBottom: '20px', letterSpacing: '1px', lineHeight: '1.5', maxWidth: '400px' }}> Are you ready to embark on a journey of self-discovery and unlock the secrets to lasting happiness? Register now for our FREE exclusive virtual summit. </p>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', maxWidth: '400px', width: '100%', padding: '20px 0', marginTop: 'auto' }}>
-        <input
-          type="text"
-          name="firstName"
-          value={firstName}
-          onChange={e => setFirstName(e.target.value)}
-          placeholder="First name"
-          required
-          style={{ margin: '10px 0', padding: '10px', width: '100%' }}
-        />
-        <input
-          type="text"
-          name="lastName"
-          value={lastName}
-          onChange={e => setLastName(e.target.value)}
-          placeholder="Last name"
-          required
-          style={{ margin: '10px 0', padding: '10px', width: '100%' }}
-        />
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-          style={{ margin: '10px 0', padding: '10px', width: '100%' }}
-        />
-        <input
-  type="submit"
-  value="CLAIM YOUR SEAT"
-  style={{
-    width: '100%',
-    padding: '10px',
-    background: 'rgba(197, 225, 184, 0.4)',
-    fontSize: '20px',
-    fontWeight: 'bold',
-    color: '#186417',
-    cursor: 'pointer',
-    border: 'none',
-  }}
+<div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', width: '70%', backgroundImage: "url(/form_background.png)", backgroundSize: 'cover', padding: '20px', margin: isMobile ? '0 auto' : '0' }}>
+<div style={{ width: isMobile ? '100%' : '35%', marginRight: isMobile ? '0' : '20px' }}>
+  <video style={{ width: '100%', height: 'auto', objectFit: 'contain'}} controls>
+    <source src="IMG_6071.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+<div style={{ background: 'transparent', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', flexGrow: 1 }}>
+<p style={{ color: '#272122', fontFamily: 'Agrandir-Bold', fontWeight: 'bold', fontSize: isMobile ? '15px' : '25px', textAlign: 'center', marginBottom: '20px', letterSpacing: '1px', lineHeight: '1.5', maxWidth: '400px' }}> Are you ready to embark on a journey of self-discovery and unlock the secrets to lasting happiness? Register now for our FREE exclusive virtual summit. </p>
+  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', maxWidth: '400px', width: '100%', padding: '20px 0', marginTop: 'auto' }}>
+    <input
+      type="text"
+      name="firstName"
+      value={firstName}
+      onChange={e => setFirstName(e.target.value)}
+      placeholder="First name"
+      required
+      style={{ margin: '10px 0', padding: '10px', width: '100%' }}
+    />
+    <input
+      type="text"
+      name="lastName"
+      value={lastName}
+      onChange={e => setLastName(e.target.value)}
+      placeholder="Last name"
+      required
+      style={{ margin: '10px 0', padding: '10px', width: '100%' }}
+    />
+    <input
+      type="email"
+      name="email"
+      value={email}
+      onChange={e => setEmail(e.target.value)}
+      placeholder="Email"
+      required
+      style={{ margin: '10px 0', padding: '10px', width: '100%' }}
+    />
+    <input
+type="submit"
+value="CLAIM YOUR SEAT"
+style={{
+width: '100%',
+padding: '10px',
+background: 'rgba(197, 225, 184, 0.4)',
+fontSize: '20px',
+fontWeight: 'bold',
+color: '#186417',
+cursor: 'pointer',
+border: 'none',
+}}
 />
-      </form>
-    </div>
-  </div>
+  </form>
+</div>
+</div>
 </div>
 
-            <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
-    <h2 style={{ fontFamily: 'Arcadian-Regular', fontWeight: 'normal' }}>Our Prestigious Speakers</h2>
-    <Carousel autoPlay showThumbs={false} className="myCarousel">
-        {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonialItem" style={styles.testimonialItem}>
-                <img src={testimonial.photo} alt="testimonial" style={styles.testimonialImage} />
-                <p style={styles.testimonialName}>{testimonial.name}</p>
-                <p>{testimonial.testimonial}</p>
-            </div>
-        ))}
-    </Carousel>
-</div>
- <Footer />
+        <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
+<h2 style={{ fontFamily: 'Arcadian-Regular', fontWeight: 'normal' }}>Our Prestigious Speakers</h2>
+<Carousel autoPlay showThumbs={false} className="myCarousel">
+    {testimonials.map((testimonial, index) => (
+        <div key={index} className="testimonialItem" style={styles.testimonialItem}>
+            <img src={testimonial.photo} alt="testimonial" style={styles.testimonialImage} />
+            <p style={styles.testimonialName}>{testimonial.name}</p>
+            <p>{testimonial.testimonial}</p>
         </div>
-    );
+    ))}
+</Carousel>
+</div>
+<Footer />
+    </div>
+);
 };    
 
 export default OptIn;
