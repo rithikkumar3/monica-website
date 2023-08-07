@@ -43,14 +43,11 @@ const PaymentConfirmed = () => {
         <h1 style={styles.paymentConfirmedText}>Payment Confirmed!</h1>
         <p style={styles.additionalText}>Thank you for purchasing the Finding Joy V.I.P. package!!! I&#39;m tickled pink that you have made a decision
     towards transformation!!! You have secured an exclusive seat to an amazing lineup! You will be
-    receiving a link to this spectacular collection of expert speakers within the next 2 weeks. This link will
+    receiving a link to this spectacular collection of expert speakers on August 21st. This link will
     contain the entire Summit and will never expire.
-    You will also be receiving daily links starting on XXXX to the daily summit speakers, as part of the
-    registration to the summit. These daily links will include 2 to 3 speakers, which will also be included in
-    your VIP collection.
-    In addition, you will be receiving a link for my upcoming 3-day seminar: XXXXX that is set to launch on
-    XXXXX as part of the VIP package!!!
-    I&#39;m so happy you have decided to take this journey with us!!!!</p>
+    In addition, you will be receiving a link for my upcoming 3-week seminar: "Grooving Into Happiness" that is set to launch in
+    October as part of the VIP package!!!
+    I'm so happy you have decided to take this journey with us!!!!</p>
       </div>
     </div>
   );

@@ -93,7 +93,7 @@ life!!! We have curated a diverse lineup of world-renowned speakers, experts, an
 share their wisdom and insights on various aspects of happiness, well-being, and personal development
 to free your life from depression and anxiety and lift you to a higher ground. This collection of 22 expert
 interviews is available to be purchased as a VIP package for only $47!!! This purchase will ALSO provide
-you with a free front row ticket to my upcoming 3-day seminar &quot;Happiness for Dummies.&quot; To access this
+you with a free front row ticket to my upcoming 3-week seminar &quot;Grooving Into Happiness&quot; To access this
 incredible package, fill out the form below!!!</p>
         </div>
       </div>

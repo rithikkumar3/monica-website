@@ -127,11 +127,17 @@ const testimonials = [
         testimonial: 'Lynch-International Speaker, Multi-Passionate Entrepreneur, Veteran Workshop Facilitator, Business Coach, background in Accounting and Holistic psychology, founder of Healing Through Love'
     },
     {
-        id: 'speaker21',
+        id: 'terrance',
         name: 'Terrance Dawkins',
         photo: '/Terrance Dawkins.jpg',
         testimonial: 'LISW-CP, CEO and Owner of Missing Pieces Counseling Services'
     },
+    {
+      id: 'jeffrey',
+      name: 'Jeffrey Davis',
+      photo: '/Jeffrey Davis.jpg',
+      testimonial: 'LISW-CP, CEO and Owner of Missing Pieces Counseling Services'
+  },
   ];
 
   const Footer = () => {
@@ -284,13 +290,13 @@ useEffect(() => {
         <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
         <div className="decoratedText">
 <p style={{color: '#272122', fontFamily: 'Arcadian', fontSize: isMobile ? '15px' : '22px', letterSpacing: '1px', lineHeight: '1.5', paddingLeft: '40px', paddingRight: '40px', paddingTop: '1px'}}>
-    Get to know an amazing lineup of renowned experts in the fields of positive psychology, mindfulness, well-being, and personal development. They will share their wisdom, insights, and practical tips to help you find relief, cultivate happiness and lead a more meaningful life.
+<b>Your Happiness is right around the corner!!!!!!!!!</b> Get to know an amazing lineup of renowned experts in the fields of Positive Psychology, Mindfulness, Well-Being, and Personal Development as they share with you their wisdom, insights, and practical tips that will give you relief from mental anguish and cultivate a life of bliss!!!! <b>Sign Up below to start a change in your life!!!!</b>
 </p>
 </div>
 </div>
 
 <div style={{width: '100%', padding: '20px', background: 'transparent', textAlign: 'center'}}>
-<p style={{color: '#272122', fontWeight: 'bold', fontSize: '26px', fontFamily: 'Arcadian'}}>SUMMIT DATES : JULY 17th - 26th</p>
+<p style={{color: '#272122', fontWeight: 'bold', fontSize: '26px', fontFamily: 'Arcadian'}}>SUMMIT DATES : AUGUST 21st - 30th</p>
 </div>
 
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginBottom: '20px' }}>
