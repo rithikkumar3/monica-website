@@ -308,7 +308,9 @@ useEffect(() => {
   </video>
 </div>
 <div style={{ background: 'transparent', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', flexGrow: 1 }}>
-<p style={{ color: '#272122', fontFamily: 'Agrandir-Bold', fontWeight: 'bold', fontSize: isMobile ? '15px' : '25px', textAlign: 'center', marginBottom: '20px', letterSpacing: '1px', lineHeight: '1.5', maxWidth: '400px' }}> Are you ready to embark on a journey of self-discovery and unlock the secrets to lasting happiness? Register now for our FREE exclusive virtual summit. </p>
+<p style={{ color: '#272122', fontFamily: 'Agrandir-Bold', fontWeight: 'bold', fontSize: isMobile ? '15px' : '25px', textAlign: 'center', marginBottom: '20px', letterSpacing: '1px', lineHeight: '1.5', maxWidth: '400px' }}> Get ready to embark on a journey of self-discovery and unlock the secrets to lasting happiness!!!! 
+Register now for our FREE exclusive 10-day Virtual Summit. 
+Don't forget to share this link with a friend or loved one, and take this journey together!!! </p>
   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', maxWidth: '400px', width: '100%', padding: '20px 0', marginTop: 'auto' }}>
     <input
       type="text"
