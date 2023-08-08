@@ -157,7 +157,7 @@ const testimonials = [
                 fontFamily: 'Arcadian', 
                 fontWeight: 'normal'
             }}>
-            We can't wait to have you join us at the Happiness Summit 2023, where you'll discover the keys to lasting happiness and build a vibrant community of support. See you there!
+            <b>We can't wait to have you join us at the Happiness Summit 2023, where you'll discover the keys to lasting happiness and build a vibrant community of support. See you there!</b>
             </p>
         </footer>
         
