@@ -50,7 +50,7 @@ const StripeCheckoutForm = () => {
           fullName: fullName,
           email: email,
           id: paymentMethod.id,
-          amount: 60 // Replace this with the amount to charge 0.0X (X/100)
+          amount: 4700 // Replace this with the amount to charge 0.0X (X/100)
         })
         .then((response) => {
           if (response.data.success) {

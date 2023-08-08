@@ -122,7 +122,7 @@ const testimonials = [
     },
     {
         id: 'sharlene',
-        name: 'Sharlene-Lynch',
+        name: 'Sharlene Lynch',
         photo: '/Sharlene-Lynch.jpg',
         testimonial: 'Lynch-International Speaker, Multi-Passionate Entrepreneur, Veteran Workshop Facilitator, Business Coach, background in Accounting and Holistic psychology, founder of Healing Through Love'
     },
