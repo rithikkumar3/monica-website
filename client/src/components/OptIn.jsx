@@ -25,8 +25,8 @@ const testimonials = [
       testimonial: 'Lawand-Internal Conflict Resolution Expert, Trauma-Informed Clinical Hypnotherapist, Stress Response Regulation Expert, and Nervous System Specialist'
     },
     {
-      id: 'julio',
-      name: 'Julio Romero',
+      id: 'juli',
+      name: 'Juli Romero',
       photo: '/Juli Romero.png',
       testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health, Spiritual Wellness Coach'
     },
