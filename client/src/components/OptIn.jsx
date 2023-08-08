@@ -92,7 +92,7 @@ const testimonials = [
     },
     {
         id: 'maurice',
-        name: 'Maurice f martin',
+        name: 'Maurice F Martin',
         photo: '/Maurice f martin.jpg',
         testimonial: 'Spiritual Life Coach, 2x Bestselling Author, Host of Hope Rising podcast, Former co-host of TV show, “Getting the Word Out.”'
     },
