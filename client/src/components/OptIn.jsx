@@ -87,7 +87,7 @@ const testimonials = [
     {
         id: 'karlonty',
         name: 'Karlonty Wallace',
-        photo: '/Karlonty Wallace.jpg',
+        photo: '/Karlonty.png',
         testimonial: 'CEO and Owner of Pawasative Partnership LLC: Helping Women of Faith heal from trauma using dogs and furbabies as healing tools'
     },
     {
