@@ -56,7 +56,7 @@ const testimonials = [
     },
     {
       id: 'tania',
-      name: 'Tania Davis',
+      name: 'Tania Davies',
       photo: '/Tania Davis.jpg',
       testimonial: 'The Success Slow Coach™️,CCHt, DHypCoun, MPNLP, MNLPC, MMktg, BMgmt, Director of Mindful Impact™ Wellness Hub, Board Director of Australian Hypnotherapists Association'
     },
