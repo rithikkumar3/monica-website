@@ -20,9 +20,9 @@ const testimonials = [
     },
     {
       id: 'faye',
-      name: 'Faye Lawande',
+      name: 'Faye Lawand',
       photo: '/Faye Lawande.jpg',
-      testimonial: 'Lawand-Internal Conflict Resolution Expert, Trauma-Informed Clinical Hypnotherapist, Stress Response Regulation Expert, and Nervous System Specialist'
+      testimonial: 'Internal Conflict Resolution Expert, Trauma-Informed Clinical Hypnotherapist, Stress Response Regulation Expert, and Nervous System Specialist'
     },
     {
       id: 'juli',
