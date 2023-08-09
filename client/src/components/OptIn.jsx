@@ -127,8 +127,8 @@ const testimonials = [
         testimonial: 'Lynch-International Speaker, Multi-Passionate Entrepreneur, Veteran Workshop Facilitator, Business Coach, background in Accounting and Holistic psychology, founder of Healing Through Love'
     },
     {
-        id: 'terrance',
-        name: 'Terrance Dawkins',
+        id: 'terance',
+        name: 'Terance Dawkins',
         photo: '/Terrance Dawkins.jpg',
         testimonial: 'LISW-CP, CEO and Owner of Missing Pieces Counseling Services'
     },
