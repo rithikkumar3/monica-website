@@ -118,7 +118,7 @@ const testimonials = [
         id: 'paula',
         name: 'Paula Kramer',
         photo: '/Paula Kramer Photo.jpg',
-        testimonial: 'International Soft Skills Mastermind Teacher International Bestselling Author, International Professional Speaker, International TV Producer'
+        testimonial: 'International Bestselling Author & TV Producer Teaching Soft Skill Power Strategies For Attracting Unimagined Success'
     },
     {
         id: 'sharlene',
