@@ -27,7 +27,7 @@ const testimonials = [
     {
       id: 'juli',
       name: 'Juli Romero',
-      photo: '/Juli Romero.png',
+      photo: '/Julis pic w stars.png',
       testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health, Spiritual Wellness Coach'
     },
     {
@@ -123,8 +123,8 @@ const testimonials = [
     {
         id: 'sharlene',
         name: 'Sharlene Lynch',
-        photo: '/Sharlene-Lynch.jpg',
-        testimonial: 'Lynch-International Speaker, Multi-Passionate Entrepreneur, Veteran Workshop Facilitator, Business Coach, background in Accounting and Holistic psychology, founder of Healing Through Love'
+        photo: '/Sharlene.jpg',
+        testimonial: 'Speaker | Thought Leaders on MINDSHIFT the future of mindset'
     },
     {
         id: 'terance',
