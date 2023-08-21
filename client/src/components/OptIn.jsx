@@ -28,7 +28,7 @@ const testimonials = [
       id: 'juli',
       name: 'Juli Romero',
       photo: '/Julis pic w stars.png',
-      testimonial: 'RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health, Spiritual Wellness Coach'
+      testimonial: 'juli Romero, RN, CCWS, CPC, DTRM, Dolphin Reiki Master Teacher, Certified Holistic Health, Spiritual Wellness Coach'
     },
     {
       id: 'justine',
