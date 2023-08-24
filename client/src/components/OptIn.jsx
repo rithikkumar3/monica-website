@@ -133,8 +133,8 @@ const testimonials = [
         testimonial: 'LISW-CP, CEO and Owner of Missing Pieces Counseling Services'
     },
     {
-      id: 'jeffrey',
-      name: 'Jeffrey Davis',
+      id: 'jeffery',
+      name: 'Jeffery Davis',
       photo: '/Jeffrey Davis.jpg',
       testimonial: 'Life Coach dedicated to helping a variety of successful entrepreneurs and professionals tap into their inner power, wisdom, and purpose to improve their professionaland personal relationships'
   },
