@@ -86,8 +86,8 @@ const ThankYou = () => {
     <div style={styles.container}>
       <div style={styles.contentContainer}>
         <div style={styles.content}>
-          <h2 style={styles.title}>Thank You For Signing Up to the Happiness Summit!</h2>
-          <h2 style={styles.title}>Will I ever be Happy? Finding Joy Amidst Depression and Anxiety</h2>
+          <h2 style={styles.title}>Congratulations on your Happiness Package!!!</h2>
+          {/* <h2 style={styles.title}>Will I ever be Happy? Finding Joy Amidst Depression and Anxiety</h2> */}
           <p style={styles.subtitle}>We are thrilled to accompany you on this incredible journey of exploring and enhancing joy in your
 life!!! We have curated a diverse lineup of world-renowned speakers, experts, and thought leaders who will
 share their wisdom and insights on various aspects of happiness, well-being, and personal development
